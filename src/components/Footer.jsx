@@ -4,7 +4,7 @@ import { Leaf } from './Decor.jsx'
 
 export default function Footer() {
   return (
-    <footer className="bg-petrol text-creme mt-20 relative overflow-hidden">
+    <footer className="bg-petrol text-creme relative overflow-hidden">
       <Leaf flip className="w-14 -right-2 top-6 rotate-12 text-creme/10 float-slower" />
       <div className="relative max-w-6xl mx-auto px-5 lg:px-8 py-14 grid gap-10 md:grid-cols-3">
         <div>

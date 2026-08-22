@@ -166,7 +166,7 @@ export default function Home() {
       {/* CTA */}
       <section className="bg-petrol relative overflow-hidden">
         <Sun className="w-28 md:w-32 -left-3 bottom-0 text-gold-soft/30 float-slower" />
-        <div className="relative max-w-4xl mx-auto px-5 lg:px-8 py-16 md:py-20 text-center">
+        <div className="relative max-w-4xl mx-auto px-5 lg:px-8 pt-16 md:pt-20 pb-6 text-center">
           <h2 className="font-serif text-3xl md:text-5xl text-creme leading-tight">
             Damit du nicht erst Unterstützung bekommst, wenn nichts mehr geht.
           </h2>
