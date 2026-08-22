@@ -1,0 +1,72 @@
+@import "tailwindcss";
+
+@theme {
+  /* MamaRaum Markenfarben */
+  --color-petrol: #2c4f55;
+  --color-petrol-dark: #244247;
+  --color-petrol-light: #3d626a;
+  --color-beige: #dcd5c8;
+  --color-beige-light: #e9e4da;
+  --color-gold: #cd9437;
+  --color-gold-soft: #d9a958;
+  --color-creme: #f8f1e9;
+  --color-anthrazit: #3a3a3a;
+
+  --font-serif: "Cormorant Garamond", Georgia, "Times New Roman", serif;
+  --font-sans: "Montserrat", "Segoe UI", Arial, sans-serif;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  @apply bg-creme text-anthrazit font-sans antialiased;
+}
+
+/* Serifen-Überschriften im Stil der Instagram-Posts */
+.h-serif {
+  @apply font-serif text-petrol;
+  letter-spacing: 0.01em;
+}
+
+.eyebrow {
+  @apply font-sans text-xs md:text-sm tracking-[0.28em] uppercase text-gold font-medium;
+}
+
+.btn-primary {
+  @apply inline-block bg-petrol text-creme px-7 py-3.5 rounded-full font-sans text-sm tracking-wider uppercase font-medium transition-colors duration-300 hover:bg-petrol-light;
+}
+
+.btn-secondary {
+  @apply inline-block border border-petrol text-petrol px-7 py-3.5 rounded-full font-sans text-sm tracking-wider uppercase font-medium transition-colors duration-300 hover:bg-petrol hover:text-creme;
+}
+
+.card {
+  @apply bg-white/70 rounded-2xl p-7 md:p-8 shadow-[0_2px_20px_rgba(44,79,85,0.07)];
+}
+
+/* Sanftes Schweben der Deko-Elemente */
+@keyframes float-soft {
+  0%, 100% { transform: translateY(0) rotate(var(--r, 0deg)); }
+  50% { transform: translateY(-10px) rotate(var(--r, 0deg)); }
+}
+
+.float-slow {
+  animation: float-soft 7s ease-in-out infinite;
+}
+
+.float-slower {
+  animation: float-soft 10s ease-in-out infinite;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .float-slow,
+  .float-slower {
+    animation: none;
+  }
+}
+
+.input-field {
+  @apply w-full rounded-xl border border-beige bg-white/80 px-4 py-3 font-sans text-sm text-anthrazit placeholder:text-anthrazit/40 focus:outline-none focus:border-petrol focus:ring-2 focus:ring-petrol/15 transition;
+}
