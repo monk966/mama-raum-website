@@ -2,7 +2,10 @@ import { Link } from 'react-router-dom'
 import logo from '../assets/logo.png'
 import julia from '../assets/julia.jpg'
 import baby from '../assets/baby.jpg'
-import { QuoteBlock, SectionTitle } from '../components/Shared.jsx'
+import haendeBaby from '../assets/haende-baby.jpg'
+import gemeinschaft from '../assets/gemeinschaft.jpg'
+import babyfuesse from '../assets/babyfuesse.jpg'
+import { QuoteBlock, SectionTitle, ImageStrip } from '../components/Shared.jsx'
 import { Branch, Heart, Feet, Blob, Sparkle, Sun } from '../components/Decor.jsx'
 
 const leistungen = [
@@ -134,6 +137,19 @@ export default function Home() {
       <QuoteBlock decor="dots" sub="Auf mehr Gemeinschaft und ein Miteinander, in dem Menschen mittragen, versorgen und auffangen.">
         Auf ein Dorf, das nicht erst dann da ist, wenn eine Mama nicht mehr kann.
       </QuoteBlock>
+
+      {/* Impressionen zum Dorf-Gedanken */}
+      <section className="bg-beige-light">
+        <div className="max-w-6xl mx-auto px-5 lg:px-8 py-16 md:py-20">
+          <ImageStrip
+            images={[
+              { src: gemeinschaft, alt: 'Zwei Frauen halten sich im Arm, während eine von ihnen ein Baby trägt' },
+              { src: haendeBaby, alt: 'Mehrere Hände stützen gemeinsam ein schlafendes Baby' },
+              { src: babyfuesse, alt: 'Nackte Babyfüße, während das Baby getragen wird' },
+            ]}
+          />
+        </div>
+      </section>
 
       {/* Krabbelgruppe Teaser */}
       <section className="relative overflow-hidden">

@@ -1,5 +1,7 @@
 import { Link } from 'react-router-dom'
-import { PageHero, QuoteBlock, SectionTitle, CTA } from '../components/Shared.jsx'
+import getragen from '../assets/getragen.jpg'
+import massage from '../assets/massage.jpg'
+import { PageHero, QuoteBlock, SectionTitle, CTA, ImageBand } from '../components/Shared.jsx'
 
 const leistungen = [
   'Unterstützung bei der Versorgung deines Babys',
@@ -53,6 +55,12 @@ export default function Muetterpflege() {
         </p>
       </section>
 
+      <ImageBand
+        src={getragen}
+        alt="Ein Baby wird von mehreren Händen gehalten und gestützt"
+        caption="Damit du dich ganz auf dich und dein Baby einlassen kannst."
+      />
+
       {/* Raum für ... */}
       <section className="bg-beige-light">
         <div className="max-w-6xl mx-auto px-5 lg:px-8 py-16 md:py-24">
@@ -69,16 +77,24 @@ export default function Muetterpflege() {
       </section>
 
       {/* Konkrete Leistungen */}
-      <section className="max-w-4xl mx-auto px-5 lg:px-8 py-16 md:py-24">
+      <section className="max-w-6xl mx-auto px-5 lg:px-8 py-16 md:py-24">
         <SectionTitle eyebrow="Ganz konkret" title="Wie kann diese Entlastung aussehen?" />
-        <ul className="space-y-4 max-w-2xl mx-auto">
-          {leistungen.map((l) => (
-            <li key={l} className="flex items-start gap-4 bg-white/70 rounded-2xl px-6 py-4 shadow-[0_2px_16px_rgba(44,79,85,0.06)]">
-              <span className="mt-1.5 w-2.5 h-2.5 rounded-full bg-gold shrink-0" />
-              <span className="text-anthrazit/85 font-light">{l}</span>
-            </li>
-          ))}
-        </ul>
+        <div className="grid lg:grid-cols-2 gap-10 lg:gap-12 items-center">
+          <ul className="space-y-4">
+            {leistungen.map((l) => (
+              <li key={l} className="flex items-start gap-4 bg-white/70 rounded-2xl px-6 py-4 shadow-[0_2px_16px_rgba(44,79,85,0.06)]">
+                <span className="mt-1.5 w-2.5 h-2.5 rounded-full bg-gold shrink-0" />
+                <span className="text-anthrazit/85 font-light">{l}</span>
+              </li>
+            ))}
+          </ul>
+          <img
+            src={massage}
+            alt="Wohltuende Massage für eine Mutter, die ihr Baby im Arm hält"
+            loading="lazy"
+            className="w-full aspect-[4/3] object-cover rounded-3xl shadow-[0_10px_40px_rgba(44,79,85,0.18)]"
+          />
+        </div>
         <p className="text-center mt-10 font-serif text-2xl md:text-3xl text-petrol">
           Dabei gibt es kein festes Programm.
         </p>

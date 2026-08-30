@@ -1,5 +1,6 @@
 import { Link } from 'react-router-dom'
 import julia from '../assets/julia.jpg'
+import miteinander from '../assets/miteinander.jpg'
 import { PageHero, QuoteBlock, CTA } from '../components/Shared.jsx'
 
 export default function UeberMich() {
@@ -65,13 +66,19 @@ export default function UeberMich() {
       </QuoteBlock>
 
       {/* Ausbildung / Praxiseinsatz */}
-      <section className="max-w-4xl mx-auto px-5 lg:px-8 py-16 md:py-20">
-        <div className="card !bg-beige-light border border-beige text-center">
+      <section className="max-w-6xl mx-auto px-5 lg:px-8 py-16 md:py-20 grid md:grid-cols-2 gap-10 items-center">
+        <img
+          src={miteinander}
+          alt="Julia Firmont im Gespräch mit einer Mutter, die ihr Baby im Arm hält"
+          loading="lazy"
+          className="w-full max-w-sm mx-auto md:max-w-none aspect-[4/5] object-cover rounded-3xl shadow-[0_10px_40px_rgba(44,79,85,0.18)]"
+        />
+        <div className="card !bg-beige-light border border-beige text-center md:text-left">
           <p className="eyebrow mb-3">Aktuell</p>
           <h2 className="font-serif text-3xl md:text-4xl text-petrol leading-tight mb-4">
             Praxiseinsatz im Rahmen meiner Ausbildung zur Mütterpflegerin
           </h2>
-          <p className="text-anthrazit/80 font-light leading-relaxed max-w-2xl mx-auto">
+          <p className="text-anthrazit/80 font-light leading-relaxed">
             Ich suche derzeit eine Mama bzw. Familie für meinen 30-Stunden-Praxiseinsatz im Rahmen
             meiner Ausbildung zur Mütterpflegerin – im September, ohne Eigenanteil für dich. Ob die
             Voraussetzungen für eine Kostenübernahme durch die Krankenkasse bei dir gegeben sind,

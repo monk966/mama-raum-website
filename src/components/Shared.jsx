@@ -59,6 +59,44 @@ export function QuoteBlock({ children, sub, decor = 'moon' }) {
   )
 }
 
+/** Ruhiges Bildband als Übergang zwischen zwei Textabschnitten */
+export function ImageBand({ src, alt, caption }) {
+  return (
+    <section className="max-w-6xl mx-auto px-5 lg:px-8 py-10 md:py-14">
+      <figure>
+        <img
+          src={src}
+          alt={alt}
+          loading="lazy"
+          className="w-full aspect-[16/10] md:aspect-[21/9] object-cover rounded-3xl shadow-[0_10px_40px_rgba(44,79,85,0.18)]"
+        />
+        {caption && (
+          <figcaption className="mt-5 text-center font-serif text-xl md:text-2xl text-petrol italic leading-snug">
+            {caption}
+          </figcaption>
+        )}
+      </figure>
+    </section>
+  )
+}
+
+/** Reihe aus zwei oder drei Bildern – einheitliches Hochformat, damit die Reihe ruhig wirkt */
+export function ImageStrip({ images }) {
+  return (
+    <div className={`grid gap-5 ${images.length === 2 ? 'sm:grid-cols-2' : 'sm:grid-cols-2 lg:grid-cols-3'}`}>
+      {images.map((img) => (
+        <img
+          key={img.src}
+          src={img.src}
+          alt={img.alt}
+          loading="lazy"
+          className="w-full aspect-[4/5] object-cover rounded-3xl shadow-[0_10px_40px_rgba(44,79,85,0.15)]"
+        />
+      ))}
+    </div>
+  )
+}
+
 /** Call-to-Action Abschnitt */
 export function CTA({ title = 'Lass uns kennenlernen.', text, buttonLabel = 'Unverbindliches Erstgespräch anfragen' }) {
   return (

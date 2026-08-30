@@ -1,4 +1,5 @@
 import { useState } from 'react'
+import kontaktHandy from '../assets/kontakt-handy.jpg'
 import { PageHero } from '../components/Shared.jsx'
 
 // TODO (Agentur): E-Mail-Adresse der Kundin eintragen bzw. Formular an
@@ -146,6 +147,13 @@ export default function Kontakt() {
               <li><span className="font-serif text-gold text-lg mr-2">3.</span>Gemeinsam klären wir alles Weitere – auch die Frage der Kostenübernahme.</li>
             </ol>
           </div>
+
+          <img
+            src={kontaktHandy}
+            alt="Ein Smartphone mit dem MamaRaum Logo auf dem Display"
+            loading="lazy"
+            className="w-full aspect-[4/3] object-cover rounded-3xl shadow-[0_10px_40px_rgba(44,79,85,0.15)]"
+          />
 
           <div className="card !bg-beige-light border border-beige">
             <p className="font-serif text-xl text-petrol italic leading-snug">

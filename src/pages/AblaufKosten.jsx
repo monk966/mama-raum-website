@@ -1,5 +1,7 @@
 import { Link } from 'react-router-dom'
-import { PageHero, SectionTitle, CTA } from '../components/Shared.jsx'
+import erstgespraech from '../assets/erstgespraech.jpg'
+import wuenscheBogen from '../assets/wuensche-bogen.jpg'
+import { PageHero, SectionTitle, CTA, ImageBand } from '../components/Shared.jsx'
 
 const schritte = [
   {
@@ -40,6 +42,12 @@ export default function AblaufKosten() {
           sich die Krankenkasse an den Kosten.
         </p>
       </PageHero>
+
+      <ImageBand
+        src={erstgespraech}
+        alt="Julia Firmont geht mit einer Mutter, die ihr Baby im Arm hält, den Wunschbogen für die Begleitung durch"
+        caption="Gemeinsam schauen wir, was du dir für diese Zeit wünschst."
+      />
 
       {/* Ablauf */}
       <section className="max-w-5xl mx-auto px-5 lg:px-8 py-16 md:py-24">
@@ -106,18 +114,26 @@ export default function AblaufKosten() {
       </section>
 
       {/* Tipp */}
-      <section className="max-w-4xl mx-auto px-5 lg:px-8 py-16 md:py-20 text-center">
-        <p className="eyebrow mb-4">Mein Tipp</p>
-        <p className="font-serif text-2xl md:text-4xl text-petrol leading-snug">
-          Kümmere dich am besten schon in der Schwangerschaft um deine Unterstützung fürs
-          Wochenbett.
-        </p>
-        <p className="mt-5 text-anthrazit/75 font-light leading-relaxed max-w-2xl mx-auto">
-          So ist dein Dorf schon da, bevor du es brauchst – und du kannst die erste Zeit mit deinem
-          Baby in Ruhe genießen. Melde dich gerne frühzeitig, dann klären wir alles Weitere
-          gemeinsam.
-        </p>
-        <Link to="/kontakt" className="btn-primary mt-8">Jetzt Erstgespräch anfragen</Link>
+      <section className="max-w-6xl mx-auto px-5 lg:px-8 py-16 md:py-20 grid md:grid-cols-2 gap-12 items-center">
+        <img
+          src={wuenscheBogen}
+          alt="Der MamaRaum Wunschbogen für die Begleitung, liegend in blühender Heide"
+          loading="lazy"
+          className="w-full max-w-sm mx-auto md:max-w-none aspect-[3/4] object-cover rounded-3xl shadow-[0_10px_40px_rgba(44,79,85,0.18)]"
+        />
+        <div className="text-center md:text-left">
+          <p className="eyebrow mb-4">Mein Tipp</p>
+          <p className="font-serif text-2xl md:text-4xl text-petrol leading-snug">
+            Kümmere dich am besten schon in der Schwangerschaft um deine Unterstützung fürs
+            Wochenbett.
+          </p>
+          <p className="mt-5 text-anthrazit/75 font-light leading-relaxed">
+            So ist dein Dorf schon da, bevor du es brauchst – und du kannst die erste Zeit mit
+            deinem Baby in Ruhe genießen. Melde dich gerne frühzeitig, dann klären wir alles
+            Weitere gemeinsam.
+          </p>
+          <Link to="/kontakt" className="btn-primary mt-8">Jetzt Erstgespräch anfragen</Link>
+        </div>
       </section>
     </>
   )

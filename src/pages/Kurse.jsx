@@ -1,6 +1,8 @@
 import { Link } from 'react-router-dom'
 import baby from '../assets/baby.jpg'
-import { PageHero, QuoteBlock, SectionTitle } from '../components/Shared.jsx'
+import krabbelgruppe from '../assets/krabbelgruppe.jpg'
+import babyArm from '../assets/baby-arm.jpg'
+import { PageHero, QuoteBlock, SectionTitle, ImageStrip } from '../components/Shared.jsx'
 
 const inhalte = [
   {
@@ -71,6 +73,16 @@ export default function Kurse() {
       <QuoteBlock sub="Sondern Zeit, eure Kinder zu beobachten, sie in ihrer Entwicklung zu begleiten – und auch der eigenen Intuition wieder ein bisschen mehr zu vertrauen.">
         Kein Vergleichen. Kein Programm, das abgearbeitet werden muss.
       </QuoteBlock>
+
+      {/* Impressionen */}
+      <section className="max-w-4xl mx-auto px-5 lg:px-8 pt-16 md:pt-20">
+        <ImageStrip
+          images={[
+            { src: krabbelgruppe, alt: 'Eltern halten gemeinsam ein Baby im Arm' },
+            { src: babyArm, alt: 'Ein Baby liegt entspannt im Arm eines Elternteils' },
+          ]}
+        />
+      </section>
 
       {/* Organisatorisches */}
       <section className="max-w-4xl mx-auto px-5 lg:px-8 py-16 md:py-24">
