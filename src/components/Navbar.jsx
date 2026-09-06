@@ -4,10 +4,9 @@ import logo from '../assets/logo.png'
 
 const links = [
   { to: '/', label: 'Startseite' },
-  { to: '/ueber-mich', label: 'Über mich' },
   { to: '/muetterpflege', label: 'Mütterpflege' },
-  { to: '/ablauf-kosten', label: 'Ablauf & Kostenübernahme' },
-  { to: '/kurse', label: 'Eltern-Kind-Kurse' },
+  { to: '/krabbelkurse', label: 'Krabbelkurse' },
+  { to: '/ueber-mich', label: 'Über mich' },
   { to: '/kontakt', label: 'Kontakt' },
 ]
 
@@ -25,7 +24,7 @@ export default function Navbar() {
         <div className="flex items-center justify-between py-3">
           <Link to="/" className="flex items-center gap-3 shrink-0 mr-8" onClick={() => setOpen(false)}>
             <img src={logo} alt="MamaRaum – Mütterpflege Saar" className="h-14 w-14 object-contain" />
-            <div className="leading-tight lg:hidden 2xl:block">
+            <div className="leading-tight">
               <span className="block font-serif text-2xl text-petrol">
                 Mama<span className="italic">Raum</span>
               </span>
@@ -36,15 +35,12 @@ export default function Navbar() {
           </Link>
 
           {/* Desktop */}
-          <nav className="hidden lg:flex items-center gap-5 xl:gap-6">
+          <nav className="hidden lg:flex items-center gap-7 xl:gap-9">
             {links.map((l) => (
               <NavLink key={l.to} to={l.to} className={linkClass} end={l.to === '/'}>
                 {l.label}
               </NavLink>
             ))}
-            <Link to="/kontakt" className="btn-primary !px-5 !py-2.5 text-[12px]">
-              Termin anfragen
-            </Link>
           </nav>
 
           {/* Mobile toggle */}
@@ -78,13 +74,6 @@ export default function Navbar() {
                 {l.label}
               </NavLink>
             ))}
-            <Link
-              to="/kontakt"
-              onClick={() => setOpen(false)}
-              className="btn-primary mt-4 !px-5 !py-2.5 text-[12px]"
-            >
-              Termin anfragen
-            </Link>
           </nav>
         )}
       </div>

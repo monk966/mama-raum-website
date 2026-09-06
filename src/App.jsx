@@ -1,13 +1,14 @@
-import { Routes, Route, useLocation } from 'react-router-dom'
+import { Routes, Route, Navigate, useLocation } from 'react-router-dom'
 import { useEffect } from 'react'
 import Navbar from './components/Navbar.jsx'
 import Footer from './components/Footer.jsx'
 import Home from './pages/Home.jsx'
-import UeberMich from './pages/UeberMich.jsx'
 import Muetterpflege from './pages/Muetterpflege.jsx'
-import AblaufKosten from './pages/AblaufKosten.jsx'
-import Kurse from './pages/Kurse.jsx'
+import Krabbelkurse from './pages/Krabbelkurse.jsx'
+import UeberMich from './pages/UeberMich.jsx'
 import Kontakt from './pages/Kontakt.jsx'
+import Impressum from './pages/Impressum.jsx'
+import Datenschutz from './pages/Datenschutz.jsx'
 
 function ScrollToTop() {
   const { pathname } = useLocation()
@@ -25,11 +26,17 @@ export default function App() {
       <main className="flex-1">
         <Routes>
           <Route path="/" element={<Home />} />
-          <Route path="/ueber-mich" element={<UeberMich />} />
           <Route path="/muetterpflege" element={<Muetterpflege />} />
-          <Route path="/ablauf-kosten" element={<AblaufKosten />} />
-          <Route path="/kurse" element={<Kurse />} />
+          <Route path="/krabbelkurse" element={<Krabbelkurse />} />
+          <Route path="/ueber-mich" element={<UeberMich />} />
           <Route path="/kontakt" element={<Kontakt />} />
+          <Route path="/impressum" element={<Impressum />} />
+          <Route path="/datenschutz" element={<Datenschutz />} />
+
+          {/* Frühere Adressen weiterleiten, damit geteilte Links nicht ins Leere laufen */}
+          <Route path="/kurse" element={<Navigate to="/krabbelkurse" replace />} />
+          <Route path="/ablauf-kosten" element={<Navigate to="/muetterpflege" replace />} />
+          <Route path="*" element={<Navigate to="/" replace />} />
         </Routes>
       </main>
       <Footer />

@@ -97,15 +97,35 @@ export function ImageStrip({ images }) {
   )
 }
 
+/** Aufklappbarer Bereich – nutzt <details>, funktioniert damit auch ohne JavaScript */
+export function Aufklappbar({ title, children }) {
+  return (
+    <details className="group card !bg-white/80">
+      <summary className="flex items-center justify-between gap-5 cursor-pointer list-none [&::-webkit-details-marker]:hidden">
+        <span className="font-serif text-2xl text-petrol">{title}</span>
+        <span
+          aria-hidden="true"
+          className="shrink-0 w-9 h-9 rounded-full bg-gold/15 text-gold flex items-center justify-center transition-transform duration-300 group-open:rotate-45"
+        >
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+            <path d="M12 5v14M5 12h14" strokeLinecap="round" />
+          </svg>
+        </span>
+      </summary>
+      <div className="mt-6 space-y-4 text-sm text-anthrazit/80 font-light leading-relaxed">{children}</div>
+    </details>
+  )
+}
+
 /** Call-to-Action Abschnitt */
-export function CTA({ title = 'Lass uns kennenlernen.', text, buttonLabel = 'Unverbindliches Erstgespräch anfragen' }) {
+export function CTA({ title = 'Lass uns kennenlernen.', text, buttonLabel = 'Unverbindlich anfragen', to = '/kontakt' }) {
   return (
     <section className="relative overflow-hidden">
       <Sun className="w-24 md:w-32 -right-4 bottom-0 text-gold/25 float-slower" />
       <div className="relative max-w-4xl mx-auto px-5 lg:px-8 py-16 md:py-20 text-center">
         <h2 className="font-serif text-3xl md:text-5xl text-petrol leading-tight mb-5">{title}</h2>
         {text && <p className="text-anthrazit/80 font-light leading-relaxed max-w-2xl mx-auto mb-8">{text}</p>}
-        <Link to="/kontakt" className="btn-primary">{buttonLabel}</Link>
+        <Link to={to} className="btn-primary">{buttonLabel}</Link>
       </div>
     </section>
   )
