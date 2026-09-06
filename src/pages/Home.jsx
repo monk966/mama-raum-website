@@ -4,6 +4,7 @@ import zweisamkeit from '../assets/zweisamkeit.jpg'
 import massage from '../assets/massage.jpg'
 import erstgespraech from '../assets/erstgespraech.jpg'
 import { Branch, Blob, Sparkle } from '../components/Decor.jsx'
+import { PhoneIcon, MailIcon } from '../components/Icons.jsx'
 import { kontakt } from '../data/kontakt.js'
 
 const bereiche = [
@@ -115,11 +116,23 @@ export default function Home() {
         <p className="mt-4 text-anthrazit/75 font-light leading-relaxed">
           Melde dich gerne – telefonisch, per E-Mail oder über Instagram.
         </p>
-        <div className="mt-7 flex flex-wrap justify-center gap-x-8 gap-y-3 font-light text-anthrazit/85">
-          <a href={kontakt.telefonHref} className="hover:text-gold transition-colors">
+        <div className="mt-7 flex flex-wrap justify-center gap-x-10 gap-y-4 font-light text-anthrazit/85">
+          <a
+            href={kontakt.telefonHref}
+            className="flex items-center gap-3 hover:text-gold transition-colors"
+          >
+            <span className="shrink-0 w-9 h-9 rounded-full bg-gold/15 text-gold flex items-center justify-center">
+              <PhoneIcon />
+            </span>
             {kontakt.telefon}
           </a>
-          <a href={`mailto:${kontakt.email}`} className="hover:text-gold transition-colors">
+          <a
+            href={`mailto:${kontakt.email}`}
+            className="flex items-center gap-3 hover:text-gold transition-colors"
+          >
+            <span className="shrink-0 w-9 h-9 rounded-full bg-gold/15 text-gold flex items-center justify-center">
+              <MailIcon />
+            </span>
             {kontakt.email}
           </a>
         </div>

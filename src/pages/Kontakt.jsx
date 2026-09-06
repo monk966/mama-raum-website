@@ -1,5 +1,6 @@
 import nachricht from '../assets/nachricht.jpg'
 import { PageHero } from '../components/Shared.jsx'
+import { PhoneIcon, MailIcon, InstagramIcon } from '../components/Icons.jsx'
 import { kontakt, muetterpflegeAnfrageLink, kursAnfrageLink } from '../data/kontakt.js'
 
 const wege = [
@@ -7,33 +8,20 @@ const wege = [
     label: 'Telefon',
     wert: kontakt.telefon,
     href: kontakt.telefonHref,
-    icon: (
-      <path d="M5 3h3l2 5-2.5 1.5a12 12 0 0 0 6 6L15 13l5 2v3a2 2 0 0 1-2.2 2A17 17 0 0 1 3 5.2 2 2 0 0 1 5 3z" strokeLinejoin="round" />
-    ),
+    Icon: PhoneIcon,
   },
   {
     label: 'E-Mail',
     wert: kontakt.email,
     href: `mailto:${kontakt.email}`,
-    icon: (
-      <>
-        <rect x="3" y="5" width="18" height="14" rx="2" />
-        <path d="M3 7l9 6 9-6" />
-      </>
-    ),
+    Icon: MailIcon,
   },
   {
     label: 'Instagram',
     wert: kontakt.instagram,
     href: kontakt.instagramUrl,
     extern: true,
-    icon: (
-      <>
-        <rect x="3" y="3" width="18" height="18" rx="5" />
-        <circle cx="12" cy="12" r="4" />
-        <circle cx="17.2" cy="6.8" r="0.9" fill="currentColor" stroke="none" />
-      </>
-    ),
+    Icon: InstagramIcon,
   },
 ]
 
@@ -63,9 +51,7 @@ export default function Kontakt() {
                     className="flex items-center gap-4 group"
                   >
                     <span className="shrink-0 w-11 h-11 rounded-full bg-creme/10 flex items-center justify-center text-gold-soft">
-                      <svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8">
-                        {w.icon}
-                      </svg>
+                      <w.Icon className="w-[19px] h-[19px]" />
                     </span>
                     <span>
                       <span className="block text-[11px] uppercase tracking-widest text-creme/50">
