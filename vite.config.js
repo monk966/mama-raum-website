@@ -15,4 +15,10 @@ export default defineConfig({
   build: {
     assetsInlineLimit: process.env.SINGLEFILE ? 100000000 : 4096,
   },
+  // Der Projektordner liegt unter ~/Documents und wird synchronisiert. Dort meldet
+  // macOS Dateiänderungen nicht zuverlässig, wodurch der Dev-Server alte Versionen
+  // ausliefert. Polling fragt die Dateien aktiv ab und behebt das.
+  server: {
+    watch: { usePolling: true, interval: 300 },
+  },
 })
