@@ -2,9 +2,8 @@ import { PageHero } from '../components/Shared.jsx'
 import { kontakt } from '../data/kontakt.js'
 
 /* TODO (Julia): Diese Datenschutzerklärung ist ein Grundgerüst und muss vor
-   dem Livegang ergänzt und rechtlich geprüft werden – insbesondere die
-   Anschrift sowie die Angaben des Hosting-Anbieters. Die mit [ ] markierten
-   Stellen müssen noch ausgefüllt werden. */
+   dem Livegang ergänzt und rechtlich geprüft werden – noch offen sind die
+   Angaben des Hosting-Anbieters. */
 
 export default function Datenschutz() {
   return (
@@ -19,7 +18,7 @@ export default function Datenschutz() {
             <br />
             {kontakt.name}
             <br />
-            [Straße und Hausnummer], [PLZ und Ort]
+            {kontakt.strasse}, {kontakt.ort}
             <br />
             E-Mail:{' '}
             <a href={`mailto:${kontakt.email}`} className="text-petrol underline hover:text-gold transition-colors">

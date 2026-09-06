@@ -9,6 +9,9 @@ export const kontakt = {
   email: 'kontakt@muetterpflege-saar.de',
   instagram: '@mamaraum_muetterpflegesaar',
   instagramUrl: 'https://www.instagram.com/mamaraum_muetterpflegesaar',
+  // Anschrift für Impressum und Datenschutzerklärung
+  strasse: 'Verdistraße 15',
+  ort: '66450 Bexbach',
   region: 'Saarland',
   fotoCredit: 'Lisa Klein Fotografie',
 }

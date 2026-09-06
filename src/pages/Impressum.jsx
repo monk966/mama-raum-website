@@ -1,9 +1,9 @@
 import { PageHero } from '../components/Shared.jsx'
 import { kontakt } from '../data/kontakt.js'
 
-/* TODO (Julia): Anschrift und ggf. Umsatzsteuer-ID ergänzen und die
-   Angaben vor dem Livegang rechtlich prüfen lassen. Die mit [ ] markierten
-   Stellen müssen noch ausgefüllt werden. */
+/* TODO (Julia): Noch offen ist die Umsatzsteuer-Angabe – entweder die
+   Umsatzsteuer-ID oder der Hinweis auf die Kleinunternehmerregelung. Die
+   Angaben vor dem Livegang rechtlich prüfen lassen. */
 
 export default function Impressum() {
   return (
@@ -18,9 +18,9 @@ export default function Impressum() {
             <br />
             {kontakt.name}
             <br />
-            [Straße und Hausnummer]
+            {kontakt.strasse}
             <br />
-            [PLZ und Ort]
+            {kontakt.ort}
           </p>
         </div>
 
