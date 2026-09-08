@@ -15,6 +15,7 @@ export const kontakt = {
   region: 'Saarpfalz-Kreis',
   fotoCredit: 'Lisa Klein Fotografie',
   umsetzung: 'Unlock Labs',
+  umsetzungUrl: 'https://unlock-labs.de',
 }
 
 /** mailto-Link mit vorbereitetem Betreff und Text */

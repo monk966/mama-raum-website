@@ -10,8 +10,16 @@ export default function Footer() {
             {kontakt.betrieb} · {kontakt.name}
           </p>
           <p className="mt-1 text-xs text-creme/60">
-            © MamaRaum {new Date().getFullYear()} by {kontakt.umsetzung} · Fotos:{' '}
-            {kontakt.fotoCredit}
+            © MamaRaum {new Date().getFullYear()} by{' '}
+            <a
+              href={kontakt.umsetzungUrl}
+              target="_blank"
+              rel="noreferrer"
+              className="hover:text-gold-soft transition-colors"
+            >
+              {kontakt.umsetzung}
+            </a>{' '}
+            · Fotos: {kontakt.fotoCredit}
           </p>
         </div>
 
