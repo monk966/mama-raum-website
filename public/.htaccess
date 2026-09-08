@@ -1,0 +1,22 @@
+# Diese Datei wird beim Hochladen mit ausgeliefert und sagt dem Server, wie er
+# mit den Adressen der Unterseiten umgehen soll. Nötig ist das, weil es auf dem
+# Server nur eine einzige index.html gibt: Ruft jemand direkt
+# /muetterpflege auf oder lädt die Seite neu, würde der Server sonst
+# "Seite nicht gefunden" melden.
+#
+# Funktioniert bei allen üblichen Anbietern (IONOS, Strato, all-inkl, Hetzner,
+# domainFACTORY). Bei Netlify oder Vercel wird stattdessen eine andere Datei
+# gebraucht – dann bitte kurz Bescheid geben.
+
+<IfModule mod_rewrite.c>
+  RewriteEngine On
+  RewriteBase /
+
+  # Vorhandene Dateien und Ordner (Bilder, Schriften, robots.txt) normal ausliefern
+  RewriteCond %{REQUEST_FILENAME} -f [OR]
+  RewriteCond %{REQUEST_FILENAME} -d
+  RewriteRule ^ - [L]
+
+  # Alles andere übernimmt die Website selbst
+  RewriteRule ^ index.html [L]
+</IfModule>

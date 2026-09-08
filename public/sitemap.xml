@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+  Inhaltsverzeichnis für Suchmaschinen. Falls die Domain anders lautet als
+  www.muetterpflege-saar.de, müssen die Adressen hier und in robots.txt sowie
+  in src/data/seo.js angepasst werden.
+
+  Impressum und Datenschutz stehen absichtlich nicht drin – sie müssen
+  erreichbar sein, sollen aber nicht in der Suche auftauchen.
+-->
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  <url><loc>https://www.muetterpflege-saar.de/</loc></url>
+  <url><loc>https://www.muetterpflege-saar.de/muetterpflege</loc></url>
+  <url><loc>https://www.muetterpflege-saar.de/krabbelkurse</loc></url>
+  <url><loc>https://www.muetterpflege-saar.de/ueber-mich</loc></url>
+  <url><loc>https://www.muetterpflege-saar.de/kontakt</loc></url>
+</urlset>

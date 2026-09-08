@@ -58,6 +58,16 @@ const ablauf = [
   },
 ]
 
+/* Beschriftung der Sprungleiste. Die "id" muss zum jeweiligen Abschnitt
+   weiter unten passen. */
+const abschnitte = [
+  { id: 'was-ist-muetterpflege', label: 'Was ist Mütterpflege' },
+  { id: 'fuer-wen', label: 'Für wen' },
+  { id: 'unterstuetzung', label: 'Unterstützung' },
+  { id: 'ablauf', label: 'Ablauf' },
+  { id: 'kosten', label: 'Kosten' },
+]
+
 export default function Muetterpflege() {
   return (
     <>
@@ -69,8 +79,25 @@ export default function Muetterpflege() {
         </p>
       </PageHero>
 
+      {/* Sprungleiste: Die Seite ist bewusst ausführlich. Wer nur eine bestimmte
+          Frage hat – meist die nach den Kosten – kommt hier direkt hin. */}
+      <nav aria-label="Abschnitte dieser Seite" className="border-y border-beige bg-creme/60">
+        <ul className="max-w-6xl mx-auto px-5 lg:px-8 py-4 flex flex-wrap justify-center gap-x-7 gap-y-2">
+          {abschnitte.map((a) => (
+            <li key={a.id}>
+              <a
+                href={`#${a.id}`}
+                className="font-sans text-[12.5px] tracking-[0.1em] uppercase text-anthrazit/70 hover:text-gold transition-colors"
+              >
+                {a.label}
+              </a>
+            </li>
+          ))}
+        </ul>
+      </nav>
+
       {/* Was ist Mütterpflege? */}
-      <section className="max-w-6xl mx-auto px-5 lg:px-8 py-16 md:py-24">
+      <section id="was-ist-muetterpflege" className="scroll-mt-24 max-w-6xl mx-auto px-5 lg:px-8 py-16 md:py-24">
         <div className="grid lg:grid-cols-2 gap-12 items-center">
           <div>
             <p className="eyebrow mb-4">Was ist Mütterpflege?</p>
@@ -122,7 +149,7 @@ export default function Muetterpflege() {
       </section>
 
       {/* Wann kann Mütterpflege unterstützen? */}
-      <section className="bg-beige-light">
+      <section id="fuer-wen" className="scroll-mt-24 bg-beige-light">
         <div className="max-w-4xl mx-auto px-5 lg:px-8 py-16 md:py-24">
           <SectionTitle eyebrow="Für wen" title="Wann kann Mütterpflege unterstützen?" />
           <div className="space-y-4 text-anthrazit/80 font-light leading-relaxed">
@@ -147,7 +174,7 @@ export default function Muetterpflege() {
       <QuoteBlock>Du musst nicht erst an deine Grenzen kommen, um Unterstützung annehmen zu dürfen.</QuoteBlock>
 
       {/* So kann ich dich unterstützen */}
-      <section className="max-w-6xl mx-auto px-5 lg:px-8 py-16 md:py-24">
+      <section id="unterstuetzung" className="scroll-mt-24 max-w-6xl mx-auto px-5 lg:px-8 py-16 md:py-24">
         <SectionTitle eyebrow="So kann ich dich unterstützen" title="Gemeinsam schauen wir, was dich gerade entlastet." />
         <p className="text-center max-w-2xl mx-auto -mt-4 mb-12 text-anthrazit/75 font-light leading-relaxed">
           Was gebraucht wird, ist von Familie zu Familie unterschiedlich. Gemeinsam schauen wir,
@@ -174,7 +201,7 @@ export default function Muetterpflege() {
       />
 
       {/* So läuft eine Anfrage ab */}
-      <section className="bg-beige-light">
+      <section id="ablauf" className="scroll-mt-24 bg-beige-light">
         <div className="max-w-6xl mx-auto px-5 lg:px-8 py-16 md:py-24">
           <SectionTitle eyebrow="Ablauf" title="So läuft eine Anfrage ab." />
           <div className="grid lg:grid-cols-[0.8fr_1.2fr] gap-12 items-start">
@@ -200,7 +227,7 @@ export default function Muetterpflege() {
       </section>
 
       {/* Kosten & Finanzierung */}
-      <section className="max-w-5xl mx-auto px-5 lg:px-8 py-16 md:py-24">
+      <section id="kosten" className="scroll-mt-24 max-w-5xl mx-auto px-5 lg:px-8 py-16 md:py-24">
         <SectionTitle eyebrow="Kosten & Finanzierung" title="Zwei Wege zur Unterstützung." />
 
         <div className="card">

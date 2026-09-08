@@ -11,11 +11,18 @@ import Kontakt from './pages/Kontakt.jsx'
 import Impressum from './pages/Impressum.jsx'
 import Datenschutz from './pages/Datenschutz.jsx'
 
+/* Bei jedem Seitenwechsel oben anfangen. Zeigt die Adresse auf einen Abschnitt
+   (z. B. /muetterpflege#kosten), stattdessen dorthin springen. */
 function ScrollToTop() {
-  const { pathname } = useLocation()
+  const { pathname, hash } = useLocation()
   useEffect(() => {
+    const ziel = hash && document.querySelector(hash)
+    if (ziel) {
+      ziel.scrollIntoView({ behavior: 'instant' })
+      return
+    }
     window.scrollTo({ top: 0, behavior: 'instant' })
-  }, [pathname])
+  }, [pathname, hash])
   return null
 }
 

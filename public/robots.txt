@@ -2,5 +2,4 @@
 User-agent: *
 Allow: /
 
-# Die Sitemap wird ergänzt, sobald die Unterseiten echte Adressen haben
-# (also /muetterpflege statt /#/muetterpflege).
+Sitemap: https://www.muetterpflege-saar.de/sitemap.xml

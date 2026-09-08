@@ -1,9 +1,7 @@
 import { PageHero } from '../components/Shared.jsx'
 import { kontakt } from '../data/kontakt.js'
 
-/* TODO (Julia): Noch offen ist die Umsatzsteuer-Angabe – entweder die
-   Umsatzsteuer-ID oder der Hinweis auf die Kleinunternehmerregelung. Die
-   Angaben vor dem Livegang rechtlich prüfen lassen. */
+/* TODO (Julia): Die Angaben vor dem Livegang rechtlich prüfen lassen. */
 
 export default function Impressum() {
   return (
@@ -48,7 +46,10 @@ export default function Impressum() {
 
         <div>
           <h2 className="font-serif text-2xl text-petrol mb-3">Umsatzsteuer</h2>
-          <p>[Umsatzsteuer-Identifikationsnummer bzw. Hinweis auf Kleinunternehmerregelung nach § 19 UStG]</p>
+          <p>
+            Als Kleinunternehmerin im Sinne von § 19 Abs. 1 UStG wird keine Umsatzsteuer berechnet
+            und daher auch nicht in Rechnungen ausgewiesen.
+          </p>
         </div>
 
         <div>

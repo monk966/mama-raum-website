@@ -21,6 +21,19 @@ function setMetaTag(attr, name, content) {
   el.setAttribute('content', content)
 }
 
+/* Sagt Google, welche Adresse die richtige ist. Verhindert, dass dieselbe Seite
+   unter mehreren Adressen (mit und ohne www, mit Parametern) doppelt gewertet
+   wird. In der Einzeldatei-Vorschau weggelassen, weil sie nicht im Netz steht. */
+function setCanonical(url) {
+  let el = document.head.querySelector('link[rel="canonical"]')
+  if (!el) {
+    el = document.createElement('link')
+    el.rel = 'canonical'
+    document.head.appendChild(el)
+  }
+  el.href = url
+}
+
 /* Angaben über den Betrieb für Google – daraus entstehen die Einträge in der
    lokalen Suche und in Google Maps. Quelle ist immer src/data/kontakt.js. */
 function betriebsdaten() {
@@ -56,13 +69,17 @@ export default function Seo() {
   useEffect(() => {
     const seite = seoSeiten[pathname] ?? seoFallback
 
+    const adresse = siteUrl + (pathname === '/' ? '/' : pathname)
+
     document.title = seite.title
     setMetaTag('name', 'description', seite.description)
 
     // Vorschau, wenn jemand den Link per WhatsApp oder Instagram teilt
     setMetaTag('property', 'og:title', seite.title)
     setMetaTag('property', 'og:description', seite.description)
-    setMetaTag('property', 'og:url', window.location.href)
+    setMetaTag('property', 'og:url', adresse)
+
+    if (!import.meta.env.EINZELDATEI) setCanonical(adresse)
   }, [pathname])
 
   useEffect(() => {
