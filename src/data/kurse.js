@@ -10,7 +10,7 @@
      'ausgebucht' ->  Ausgebucht
 
    Die Reihenfolge der Gruppen bleibt immer chronologisch nach Alter:
-   erst ca. 3–6 Monate, danach ca. 7–12 Monate.
+   erst die jüngere, danach die ältere Gruppe.
    ===================================================================== */
 
 export const aktuelleRunde = {
@@ -22,8 +22,8 @@ export const aktuelleRunde = {
 
 export const kursgruppen = [
   {
-    id: '3-6',
-    alter: 'ca. 3–6 Monate',
+    id: '0-6',
+    alter: 'von Geburt bis 6 Monate',
     zeit: 'montags, 10:30–11:45 Uhr',
     verfuegbarkeit: 'frei',
   },

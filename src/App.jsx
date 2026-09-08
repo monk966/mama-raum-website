@@ -2,6 +2,7 @@ import { Routes, Route, Navigate, useLocation } from 'react-router-dom'
 import { useEffect } from 'react'
 import Navbar from './components/Navbar.jsx'
 import Footer from './components/Footer.jsx'
+import Seo from './components/Seo.jsx'
 import Home from './pages/Home.jsx'
 import Muetterpflege from './pages/Muetterpflege.jsx'
 import Krabbelkurse from './pages/Krabbelkurse.jsx'
@@ -21,6 +22,7 @@ function ScrollToTop() {
 export default function App() {
   return (
     <div className="min-h-screen flex flex-col">
+      <Seo />
       <ScrollToTop />
       <Navbar />
       <main className="flex-1">

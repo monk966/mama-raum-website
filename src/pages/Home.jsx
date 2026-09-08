@@ -1,7 +1,7 @@
 import { Link } from 'react-router-dom'
 import logo from '../assets/logo.png'
 import zweisamkeit from '../assets/zweisamkeit.jpg'
-import massage from '../assets/massage.jpg'
+import babyfuesse from '../assets/babyfuesse.jpg'
 import erstgespraech from '../assets/erstgespraech.jpg'
 import { Branch, Blob, Sparkle } from '../components/Decor.jsx'
 import { PhoneIcon, MailIcon, InstagramIcon } from '../components/Icons.jsx'
@@ -19,8 +19,8 @@ const bereiche = [
     button: 'Mehr über Mütterpflege',
   },
   {
-    bild: massage,
-    alt: 'Wohltuende Massage für eine Mutter, die ihr Baby im Arm hält',
+    bild: babyfuesse,
+    alt: 'Nackte Babyfüße, während das Baby getragen wird',
     titel: 'Krabbelkurse',
     text: 'Gemeinsam wachsen: Zeit für dein Kind, Austausch mit anderen Eltern und Raum für all die Themen des ersten Lebensjahres.',
     to: '/krabbelkurse',

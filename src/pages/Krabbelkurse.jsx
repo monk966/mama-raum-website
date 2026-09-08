@@ -1,13 +1,13 @@
-import massage from '../assets/massage.jpg'
-import haendeBaby from '../assets/haende-baby.jpg'
+import babyfuesse from '../assets/babyfuesse.jpg'
+import krabbelgruppe from '../assets/krabbelgruppe.jpg'
 import { PageHero, QuoteBlock, SectionTitle, ImageBand } from '../components/Shared.jsx'
 import { aktuelleRunde, kursgruppen, verfuegbarkeitLabels } from '../data/kurse.js'
 import { kursAnfrageLink } from '../data/kontakt.js'
 
-/* Reihenfolge immer chronologisch nach Alter: erst 3–6 Monate, dann 7–12 Monate. */
+/* Reihenfolge immer chronologisch nach Alter: erst die jüngere, dann die ältere Gruppe. */
 const gruppen = [
   {
-    alter: 'ca. 3–6 Monate',
+    alter: 'von Geburt bis 6 Monate',
     titel: 'Gemeinsam ankommen',
     text: [
       'Die ersten Monate mit Baby sind eine ganz besondere Zeit – wunderschön, intensiv und manchmal auch voller Fragen.',
@@ -58,8 +58,8 @@ export default function Krabbelkurse() {
       {/* Zeit für dein Baby. Raum für dich. */}
       <section className="max-w-6xl mx-auto px-5 lg:px-8 py-16 md:py-24 grid md:grid-cols-2 gap-12 items-center">
         <img
-          src={massage}
-          alt="Wohltuende Massage für eine Mutter, die ihr Baby im Arm hält"
+          src={babyfuesse}
+          alt="Nackte Babyfüße, während das Baby getragen wird"
           loading="lazy"
           className="w-full aspect-[4/3] object-cover rounded-3xl shadow-[0_10px_40px_rgba(44,79,85,0.18)]"
         />
@@ -190,8 +190,8 @@ export default function Krabbelkurse() {
       </section>
 
         <ImageBand
-          src={haendeBaby}
-          alt="Mehrere Hände stützen gemeinsam ein schlafendes Baby"
+          src={krabbelgruppe}
+          alt="Eltern halten gemeinsam ein Baby im Arm"
         />
 
       {/* Anmeldung */}

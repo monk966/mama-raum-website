@@ -67,7 +67,7 @@ export default function Kontakt() {
             </ul>
 
             <p className="mt-8 pt-6 border-t border-creme/15 text-sm text-creme/70 font-light">
-              Ich bin im {kontakt.region} und der Umgebung für dich da – zur Mütterpflege komme ich
+              Ich bin überwiegend im {kontakt.region} und Umgebung für dich da – zur Mütterpflege komme ich
               zu dir nach Hause.
             </p>
           </div>

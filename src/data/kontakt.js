@@ -12,7 +12,7 @@ export const kontakt = {
   // Anschrift für Impressum und Datenschutzerklärung
   strasse: 'Verdistraße 15',
   ort: '66450 Bexbach',
-  region: 'Saarland',
+  region: 'Saarpfalz-Kreis',
   fotoCredit: 'Lisa Klein Fotografie',
 }
 

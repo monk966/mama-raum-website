@@ -95,7 +95,7 @@ export default function UeberMich() {
       <section className="max-w-3xl mx-auto px-5 lg:px-8 py-16 md:py-24">
         <SectionTitle eyebrow="Warum MamaRaum?" title="Mama zu werden hat mich verändert." />
         <div className="space-y-5 text-anthrazit/85 font-light leading-relaxed">
-          <p>Viel tiefer, als ich es vorher hätte erahnen können.</p>
+          <p>Viel mehr, als ich es vorher hätte erahnen können.</p>
           <p>
             Denn mit der Geburt eines Kindes wird nicht nur ein Baby geboren. Auch eine Frau findet
             sich neu – als Mama, mit einem veränderten Körper, neuen Gefühlen, einer neuen
@@ -149,7 +149,7 @@ export default function UeberMich() {
           </p>
           <p>Ein Raum für Verbindung, Entlastung und echtes Miteinander.</p>
           <p className="font-serif text-2xl md:text-3xl text-petrol leading-snug">
-            Ein Raum zum Ankommen, Wachsen und zum Sein. 🤍
+            Ein Raum zum Ankommen, Wachsen und zum Sein.
           </p>
         </div>
       </section>
