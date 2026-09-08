@@ -1,4 +1,6 @@
+# Alle Suchmaschinen dürfen die komplette Seite lesen.
 User-agent: *
 Allow: /
 
-Sitemap: https://www.muetterpflege-saar.de/sitemap.xml
+# Die Sitemap wird ergänzt, sobald die Unterseiten echte Adressen haben
+# (also /muetterpflege statt /#/muetterpflege).
