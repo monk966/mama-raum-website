@@ -10,7 +10,8 @@ export default function Footer() {
             {kontakt.betrieb} · {kontakt.name}
           </p>
           <p className="mt-1 text-xs text-creme/60">
-            © {new Date().getFullYear()} MamaRaum · Fotos: {kontakt.fotoCredit}
+            © MamaRaum {new Date().getFullYear()} by {kontakt.umsetzung} · Fotos:{' '}
+            {kontakt.fotoCredit}
           </p>
         </div>
 

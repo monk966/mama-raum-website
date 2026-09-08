@@ -14,6 +14,7 @@ export const kontakt = {
   ort: '66450 Bexbach',
   region: 'Saarpfalz-Kreis',
   fotoCredit: 'Lisa Klein Fotografie',
+  umsetzung: 'Unlock Labs',
 }
 
 /** mailto-Link mit vorbereitetem Betreff und Text */
