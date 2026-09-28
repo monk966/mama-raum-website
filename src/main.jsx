@@ -7,7 +7,7 @@ import App from './App.jsx'
 /* Auf dem Server bekommt jede Unterseite eine echte Adresse (/muetterpflege).
    Nur so kann Google sie als eigene Seite in die Suche aufnehmen. Dafür muss
    der Server unbekannte Adressen an die index.html weiterreichen – das
-   erledigt public/.htaccess.
+   erledigt vercel.json.
 
    Die per SINGLEFILE erzeugte Einzeldatei läuft ohne Server und muss weiter
    Adressen mit Raute verwenden. */
