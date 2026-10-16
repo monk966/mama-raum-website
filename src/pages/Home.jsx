@@ -5,6 +5,7 @@ import babyfuesse from '../assets/babyfuesse.jpg'
 import erstgespraech from '../assets/erstgespraech.jpg'
 import { Branch, Blob, Sparkle } from '../components/Decor.jsx'
 import { PhoneIcon, MailIcon, InstagramIcon } from '../components/Icons.jsx'
+import MdevSiegel from '../components/MdevSiegel.jsx'
 import { kontakt } from '../data/kontakt.js'
 
 const bereiche = [
@@ -112,6 +113,32 @@ export default function Home() {
             loading="lazy"
             className="w-full aspect-[16/10] md:aspect-[21/9] object-cover rounded-3xl shadow-[0_10px_40px_rgba(44,79,85,0.18)]"
           />
+        </div>
+      </section>
+
+      {/* Mitgliedschaft im Berufsverband – das Siegel steht hier bewusst groß und
+          wird erklärt, damit erkennbar ist, wofür es vergeben wurde. */}
+      <section className="max-w-5xl mx-auto px-5 lg:px-8 py-16 md:py-20">
+        <div className="flex flex-col items-center gap-8 text-center md:flex-row md:gap-12 md:text-left">
+          <MdevSiegel className="w-36 md:w-44" />
+          <div>
+            <h2 className="font-serif text-3xl md:text-4xl text-petrol leading-tight">
+              Geprüftes Mitglied im Berufsverband
+            </h2>
+            <p className="mt-4 text-anthrazit/75 font-light leading-relaxed">
+              Als geprüftes Mitglied im MDEV Mütterpflege Deutschland e. V. verpflichte ich mich den
+              Qualitätsstandards und dem Ehrenkodex des Berufsverbands – mit regelmäßigen
+              Fortbildungen, Supervision und verbindlichen ethischen Grundsätzen.
+            </p>
+            <a
+              href="https://muetterpflege-deutschland.de/"
+              target="_blank"
+              rel="noreferrer"
+              className="mt-5 inline-block font-sans text-[12.5px] tracking-[0.1em] uppercase text-petrol hover:text-gold transition-colors"
+            >
+              Mehr über den Berufsverband
+            </a>
+          </div>
         </div>
       </section>
 

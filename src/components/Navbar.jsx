@@ -1,14 +1,7 @@
 import { useState } from 'react'
 import { NavLink, Link } from 'react-router-dom'
 import logo from '../assets/logo.png'
-
-const links = [
-  { to: '/', label: 'Startseite' },
-  { to: '/muetterpflege', label: 'Mütterpflege' },
-  { to: '/krabbelkurse', label: 'Krabbelkurse' },
-  { to: '/ueber-mich', label: 'Über mich' },
-  { to: '/kontakt', label: 'Kontakt' },
-]
+import { hauptmenue as links } from '../data/navigation.js'
 
 export default function Navbar() {
   const [open, setOpen] = useState(false)
