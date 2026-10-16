@@ -1,7 +1,7 @@
 import { Link, NavLink } from 'react-router-dom'
 import { kontakt } from '../data/kontakt.js'
 import { hauptmenue, rechtliches } from '../data/navigation.js'
-import { InstagramIcon } from './Icons.jsx'
+import { MailIcon, InstagramIcon } from './Icons.jsx'
 import MdevSiegel from './MdevSiegel.jsx'
 import logo from '../assets/logo.png'
 
@@ -12,6 +12,11 @@ const hellStellen = 'brightness-0 invert'
 
 /* "Startseite" bleibt im Footer weg – dafür ist das Logo da. */
 const footerMenue = hauptmenue.filter((l) => l.to !== '/')
+
+const kontaktwege = [
+  { href: `mailto:${kontakt.email}`, wert: kontakt.email, Icon: MailIcon },
+  { href: kontakt.instagramUrl, wert: kontakt.instagram, Icon: InstagramIcon, extern: true },
+]
 
 /* Kleine Überschrift über den Spalten, damit die drei Blöcke oben auf einer
    Linie beginnen und der Footer eine klare Struktur bekommt. */
@@ -24,12 +29,12 @@ function Spaltentitel({ children }) {
 export default function Footer() {
   return (
     <footer className="bg-petrol text-creme">
-      <div className="max-w-6xl mx-auto px-5 lg:px-8 py-14">
-        <div className="grid gap-12 text-center lg:grid-cols-[1fr_auto_1fr] lg:gap-10 lg:text-left lg:items-start">
-          {/* Links: Marke und Mitgliedschaft */}
-          <div className="flex flex-col items-center gap-6 lg:items-start">
+      <div className="max-w-6xl mx-auto px-5 lg:px-8 py-11">
+        <div className="grid gap-9 text-center lg:grid-cols-[1fr_auto_1fr] lg:gap-10 lg:text-left lg:items-start">
+          {/* Links: Marke */}
+          <div className="flex flex-col items-center gap-4 lg:items-start">
             <Link to="/" className="flex items-center gap-3">
-              <img src={logo} alt="" className={`h-12 w-12 object-contain ${hellStellen}`} />
+              <img src={logo} alt="" className={`h-11 w-11 object-contain ${hellStellen}`} />
               <span className="leading-tight">
                 <span className="block font-serif text-xl">
                   Mama<span className="italic">Raum</span>
@@ -39,17 +44,15 @@ export default function Footer() {
                 </span>
               </span>
             </Link>
-            <p className="max-w-[17rem] text-sm font-light leading-relaxed text-creme/65">
-              Mütterpflege und Krabbelkurse im Saarpfalz-Kreis – für dich und deine Familie rund um
-              Schwangerschaft, Wochenbett und die erste Zeit mit Baby.
+            <p className="max-w-[16rem] text-sm font-light leading-relaxed text-creme/60">
+              Mütterpflege und Krabbelkurse im Saarpfalz-Kreis.
             </p>
-            <MdevSiegel className="w-[72px]" hell />
           </div>
 
           {/* Mitte: Menü untereinander, darunter kleiner die Pflichtangaben */}
-          <nav className="flex flex-col items-center gap-5 lg:items-start">
+          <nav className="flex flex-col items-center gap-4 lg:items-start">
             <Spaltentitel>Seiten</Spaltentitel>
-            <ul className="flex flex-col gap-2.5">
+            <ul className="flex flex-col gap-2">
               {footerMenue.map((l) => (
                 <li key={l.to}>
                   <NavLink
@@ -65,7 +68,7 @@ export default function Footer() {
                 </li>
               ))}
             </ul>
-            <ul className="flex flex-col gap-1.5 text-xs text-creme/55">
+            <ul className="flex flex-col gap-1 text-xs text-creme/55">
               {rechtliches.map((l) => (
                 <li key={l.to}>
                   <Link to={l.to} className="hover:text-gold-soft transition-colors">
@@ -76,24 +79,28 @@ export default function Footer() {
             </ul>
           </nav>
 
-          {/* Rechts: Kontaktweg über Instagram */}
-          <div className="flex flex-col items-center gap-5 lg:items-end">
-            <Spaltentitel>Folge mir</Spaltentitel>
-            <a
-              href={kontakt.instagramUrl}
-              target="_blank"
-              rel="noreferrer"
-              className="flex items-center gap-3 text-sm font-light text-creme/80 hover:text-gold-soft transition-colors"
-            >
-              <span className="w-10 h-10 shrink-0 rounded-full border border-creme/25 flex items-center justify-center">
-                <InstagramIcon className="w-[18px] h-[18px]" />
-              </span>
-              {kontakt.instagram}
-            </a>
+          {/* Rechts: Kontaktwege, darunter die Mitgliedschaft */}
+          <div className="flex flex-col items-center gap-4 lg:items-end">
+            <Spaltentitel>Kontakt</Spaltentitel>
+            <ul className="flex flex-col gap-2.5">
+              {kontaktwege.map((w) => (
+                <li key={w.wert}>
+                  <a
+                    href={w.href}
+                    {...(w.extern ? { target: '_blank', rel: 'noreferrer' } : {})}
+                    className="flex items-center gap-2.5 text-sm font-light text-creme/80 hover:text-gold-soft transition-colors"
+                  >
+                    <w.Icon className="w-[17px] h-[17px] shrink-0 text-creme/50" />
+                    {w.wert}
+                  </a>
+                </li>
+              ))}
+            </ul>
+            <MdevSiegel className="w-[60px]" hell />
           </div>
         </div>
 
-        <div className="mt-12 pt-6 border-t border-creme/15 text-center text-xs text-creme/50">
+        <div className="mt-9 pt-5 border-t border-creme/15 text-center text-xs text-creme/50">
           © MamaRaum {new Date().getFullYear()} by{' '}
           <a
             href={kontakt.umsetzungUrl}
