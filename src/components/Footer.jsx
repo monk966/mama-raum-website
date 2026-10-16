@@ -10,19 +10,24 @@ import logo from '../assets/logo.png'
    deshalb lassen sie sich per Filter sauber auf Creme umstellen. */
 const hellStellen = 'brightness-0 invert'
 
-/* "Startseite" bleibt im Footer weg – dafür ist das Logo da. Ohne diesen
-   Punkt passt das Menü genau mittig zwischen Logo und Instagram. */
+/* "Startseite" bleibt im Footer weg – dafür ist das Logo da. */
 const footerMenue = hauptmenue.filter((l) => l.to !== '/')
+
+/* Kleine Überschrift über den Spalten, damit die drei Blöcke oben auf einer
+   Linie beginnen und der Footer eine klare Struktur bekommt. */
+function Spaltentitel({ children }) {
+  return (
+    <p className="font-sans text-[11px] tracking-[0.2em] uppercase text-creme/45">{children}</p>
+  )
+}
 
 export default function Footer() {
   return (
     <footer className="bg-petrol text-creme">
-      <div className="max-w-6xl mx-auto px-5 lg:px-8 py-12 md:py-14">
-        {/* Gleich breite Außenspalten, damit das Menü wirklich in der Mitte der
-            Seite steht und nicht nur zwischen Logo und Instagram. */}
-        <div className="grid gap-10 text-center lg:grid-cols-[1fr_auto_1fr] lg:gap-12 lg:text-left">
+      <div className="max-w-6xl mx-auto px-5 lg:px-8 py-14">
+        <div className="grid gap-12 text-center lg:grid-cols-[1fr_auto_1fr] lg:gap-10 lg:text-left lg:items-start">
           {/* Links: Marke und Mitgliedschaft */}
-          <div className="flex flex-col items-center gap-7 lg:items-start">
+          <div className="flex flex-col items-center gap-6 lg:items-start">
             <Link to="/" className="flex items-center gap-3">
               <img src={logo} alt="" className={`h-12 w-12 object-contain ${hellStellen}`} />
               <span className="leading-tight">
@@ -34,17 +39,21 @@ export default function Footer() {
                 </span>
               </span>
             </Link>
-            <MdevSiegel className="w-16" hell />
+            <p className="max-w-[17rem] text-sm font-light leading-relaxed text-creme/65">
+              Mütterpflege und Krabbelkurse im Saarpfalz-Kreis – für dich und deine Familie rund um
+              Schwangerschaft, Wochenbett und die erste Zeit mit Baby.
+            </p>
+            <MdevSiegel className="w-[72px]" hell />
           </div>
 
-          {/* Mitte: Menü, darunter kleiner die Pflichtangaben */}
-          <nav className="flex flex-col items-center gap-5 lg:pt-1">
-            <ul className="flex flex-wrap justify-center gap-x-7 gap-y-2">
+          {/* Mitte: Menü untereinander, darunter kleiner die Pflichtangaben */}
+          <nav className="flex flex-col items-center gap-5 lg:items-start">
+            <Spaltentitel>Seiten</Spaltentitel>
+            <ul className="flex flex-col gap-2.5">
               {footerMenue.map((l) => (
                 <li key={l.to}>
                   <NavLink
                     to={l.to}
-                    end={l.to === '/'}
                     className={({ isActive }) =>
                       `font-sans text-[12.5px] tracking-[0.1em] uppercase transition-colors ${
                         isActive ? 'text-gold-soft' : 'hover:text-gold-soft'
@@ -56,7 +65,7 @@ export default function Footer() {
                 </li>
               ))}
             </ul>
-            <ul className="flex flex-wrap justify-center gap-x-5 gap-y-1 text-xs text-creme/55">
+            <ul className="flex flex-col gap-1.5 text-xs text-creme/55">
               {rechtliches.map((l) => (
                 <li key={l.to}>
                   <Link to={l.to} className="hover:text-gold-soft transition-colors">
@@ -67,21 +76,24 @@ export default function Footer() {
             </ul>
           </nav>
 
-          {/* Rechts: Instagram */}
-          <div className="flex justify-center lg:justify-end lg:pt-1">
+          {/* Rechts: Kontaktweg über Instagram */}
+          <div className="flex flex-col items-center gap-5 lg:items-end">
+            <Spaltentitel>Folge mir</Spaltentitel>
             <a
               href={kontakt.instagramUrl}
               target="_blank"
               rel="noreferrer"
-              aria-label={`Instagram: ${kontakt.instagram}`}
-              className="w-11 h-11 rounded-full border border-creme/25 flex items-center justify-center hover:border-gold-soft hover:text-gold-soft transition-colors"
+              className="flex items-center gap-3 text-sm font-light text-creme/80 hover:text-gold-soft transition-colors"
             >
-              <InstagramIcon className="w-[19px] h-[19px]" />
+              <span className="w-10 h-10 shrink-0 rounded-full border border-creme/25 flex items-center justify-center">
+                <InstagramIcon className="w-[18px] h-[18px]" />
+              </span>
+              {kontakt.instagram}
             </a>
           </div>
         </div>
 
-        <div className="mt-10 pt-6 border-t border-creme/15 text-center text-xs text-creme/50">
+        <div className="mt-12 pt-6 border-t border-creme/15 text-center text-xs text-creme/50">
           © MamaRaum {new Date().getFullYear()} by{' '}
           <a
             href={kontakt.umsetzungUrl}
