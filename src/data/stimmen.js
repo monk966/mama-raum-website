@@ -22,6 +22,14 @@
 
    Bitte veröffentliche eine Rückmeldung nur, wenn du dafür das
    Einverständnis der Person hast – auch dann, wenn sie anonym bleibt.
+   Das gilt auch für Bewertungen, die schon öffentlich bei Google stehen:
+   der Text gehört der Person, die ihn geschrieben hat. Eine kurze Nachricht
+   mit der Frage, ob du die Bewertung auf deiner Website zeigen darfst,
+   reicht völlig.
+
+   Wähle außerdem nicht nur die besten Stimmen aus und lass kritische
+   bewusst weg – das wäre irreführende Werbung. Ein ehrlicher Querschnitt
+   ist auch glaubwürdiger.
    ===================================================================== */
 
 export const googleProfil = {
