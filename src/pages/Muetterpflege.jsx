@@ -2,6 +2,8 @@ import babyArm from '../assets/baby-arm.jpg'
 import getragen from '../assets/getragen.jpg'
 import juliaBogen from '../assets/julia-bogen.jpg'
 import { PageHero, QuoteBlock, SectionTitle, CTA, ImageBand, Aufklappbar } from '../components/Shared.jsx'
+import Stimmen from '../components/Stimmen.jsx'
+import { stimmenMuetterpflege, zeigtStimmen } from '../data/stimmen.js'
 
 const unterstuetzung = [
   {
@@ -66,6 +68,7 @@ const abschnitte = [
   { id: 'unterstuetzung', label: 'Unterstützung' },
   { id: 'ablauf', label: 'Ablauf' },
   { id: 'kosten', label: 'Kosten' },
+  ...(zeigtStimmen(stimmenMuetterpflege) ? [{ id: 'stimmen', label: 'Stimmen' }] : []),
 ]
 
 export default function Muetterpflege() {
@@ -320,6 +323,13 @@ export default function Muetterpflege() {
           </div>
         </div>
       </section>
+
+      <Stimmen
+        id="stimmen"
+        title="Das sagen Mamas über meine Begleitung"
+        intro="Jede Schwangerschaft, jede Geburt und jede Familie ist einzigartig. Umso wertvoller sind die persönlichen Erfahrungen von Müttern, die ich bereits begleiten durfte. Ihre Rückmeldungen geben einen kleinen Einblick in meine Arbeit und können anderen Mamas Mut machen, sich Unterstützung zu holen."
+        stimmen={stimmenMuetterpflege}
+      />
 
       <CTA
         title="Lass uns gemeinsam schauen, was du gerade brauchst."

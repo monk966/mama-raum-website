@@ -14,7 +14,7 @@
    ===================================================================== */
 
 export const aktuelleRunde = {
-  kursstart: '14.09.2026',
+  kursstart: '11.01.2027',
   umfang: '8 Termine à 75 Minuten',
   ort: 'Hebammen- & Geburtshaus Mamilu, Bexbach',
   gebuehr: '110 €',

@@ -1,7 +1,9 @@
 import babyfuesse from '../assets/babyfuesse.jpg'
 import krabbelgruppe from '../assets/krabbelgruppe.jpg'
 import { PageHero, QuoteBlock, SectionTitle, ImageBand } from '../components/Shared.jsx'
+import Stimmen from '../components/Stimmen.jsx'
 import { aktuelleRunde, kursgruppen, verfuegbarkeitLabels } from '../data/kurse.js'
+import { stimmenKrabbelkurse } from '../data/stimmen.js'
 import { kursAnfrageLink } from '../data/kontakt.js'
 
 /* Reihenfolge immer chronologisch nach Alter: erst die jüngere, dann die ältere Gruppe. */
@@ -139,7 +141,12 @@ export default function Krabbelkurse() {
 
       {/* Aktuelle Kurse */}
       <section className="max-w-5xl mx-auto px-5 lg:px-8 py-16 md:py-24">
-        <SectionTitle eyebrow="Aktuelle Kurse" title="Die nächste Kursrunde." />
+        {/* Überschrift kommt aus kurse.js, damit beim nächsten Kursstart nur
+            ein Datum an einer Stelle geändert werden muss. */}
+        <SectionTitle
+          eyebrow="Aktuelle Kurse"
+          title={`Neue Krabbelkurse ab dem ${aktuelleRunde.kursstart}.`}
+        />
 
         <div className="card">
           <dl className="grid sm:grid-cols-2 gap-x-10 gap-y-4">
@@ -160,6 +167,22 @@ export default function Krabbelkurse() {
               <dd className="font-serif text-xl text-petrol">{aktuelleRunde.gebuehr}</dd>
             </div>
           </dl>
+
+          {/* Der Familiengutschein ist 50 € wert und wird allen Eltern im Kreis
+              zur Geburt zugeschickt – der Link führt zur Seite des Landkreises. */}
+          <p className="mt-7 rounded-2xl border border-gold/25 bg-gold/10 px-5 py-4 text-sm text-anthrazit/85 font-light leading-relaxed">
+            <span className="font-medium text-petrol">Gute Nachrichten! 🌿</span> Bei MamaRaum kannst
+            du auch den{' '}
+            <a
+              href="https://www.saarpfalz-kreis.de/buergerservice-views/leistungen/SAL:entry:269254-VLR/familiengutschein/"
+              target="_blank"
+              rel="noreferrer"
+              className="text-petrol underline underline-offset-2 hover:text-gold transition-colors"
+            >
+              Familiengutschein des Saarpfalz-Kreises
+            </a>{' '}
+            für meine Krabbelkurse einlösen.
+          </p>
 
           <div className="grid sm:grid-cols-2 gap-5 mt-8">
             {kursgruppen.map((g) => {
@@ -225,6 +248,12 @@ export default function Krabbelkurse() {
           </div>
         </div>
       </section>
+
+      <Stimmen
+        title="Das sagen Eltern über meine Krabbelgruppen"
+        intro="Du hast mit deinem Kind an einer meiner Krabbelgruppen teilgenommen? Dann freue ich mich riesig, wenn du deine Erfahrungen teilst! Dein Feedback gibt anderen Familien einen Einblick in meine Kurse und hilft ihnen bei der Entscheidung."
+        stimmen={stimmenKrabbelkurse}
+      />
     </>
   )
 }
